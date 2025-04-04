@@ -50,9 +50,9 @@ public class SWRRInject {
                                     b.getLocals().addFirst(r1);
                                     PatchingChain<Unit> units = b.getUnits();
                                     Unit head = units.getFirst();
-                                    units.insertBefore(head, assignStmt);
-                                    units.insertAfter(assignStmt, invokeStmt);
-                                    units.insertAfter(invokeStmt, throwStmt);
+                                    units.insertBefore(assignStmt, head);
+                                    units.insertAfter(invokeStmt, assignStmt);
+                                    units.insertAfter(throwStmt, invokeStmt);
                                     System.out.println("Jimple body: "+ b);
                                 } catch (RuntimeException e){
                                     System.err.println(e);
