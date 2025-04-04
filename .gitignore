@@ -1,5 +1,9 @@
+#IDE
+.idea/
 #soot
 /sootOutput
 #maven
 target/
+#jtalos
+SWRR_OPTIONS
 
